@@ -77,6 +77,10 @@ data: function() {
     onClickRight() {
       Toast("按钮");
     }
+  },
+  created:function(){
+       Notify({ type: 'success', message: '工号：2849  姓名：刘盈  部门：财务数据中心' });
+
   }
 };
 </script>
