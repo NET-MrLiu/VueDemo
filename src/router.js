@@ -13,22 +13,41 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/index.vue")
+        import(/* webpackChunkName: "about" */ "./views/index.vue"),
+        meta:{index:0},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
     },
     {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
-      path: "/about",
-      name: "about",
+      path: "/Customer",
+      name: "Customer",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ "./views/Customer.vue"),
+        meta:{index:1},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
+    },
+    {
+      path: "/SelectProduct",
+      name: "SelectProduct",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/SelectProduct.vue"),
+        meta:{index:2},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
+    },
+    {
+      path: "/Lading",
+      name: "Lading",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Lading.vue"),
+        meta:{index:3},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
     }
-   
-  ]
+  ],
+  
 });
+
+
