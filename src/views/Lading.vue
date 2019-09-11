@@ -58,7 +58,7 @@
       <van-switch-cell v-model="checkeds" title="是否是合作单？" @input="onInputto" size="18px" />
     </van-cell-group>
     <van-cell-group v-bind:class="nameto">
-      <van-field :value="xxsvalue" type="text" label="合作销售" placeholder="点击选择销售人员" required />
+      <van-field :value="xxsvalue" type="text" label="合作销售" placeholder="点击选择销售人员" @click="openPlaceholder" required />
     </van-cell-group>
     <van-field
       :value="xsvalue"
@@ -128,6 +128,10 @@
         @confirm="onactConfirm"
       />
     </van-popup>
+     <van-tabbar route>
+      <van-tabbar-item replace to="/" icon="home-o">主页</van-tabbar-item>
+      <van-tabbar-item replace to="/search" icon="user-o">我的信息</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 <style>
@@ -160,6 +164,7 @@ import { Picker } from "vant";
 Vue.use(Picker);
 import { Button } from "vant";
 Vue.use(Button);
+import dingtalk from "_dingtalk-jsapi@2.7.6@dingtalk-jsapi";
 export default {
   data() {
     return {
@@ -233,6 +238,10 @@ export default {
     onactConfirm(value, index) {
       this.acttype = value;
       this.actshow = false;
+    },
+    openPlaceholder()
+    {
+
     }
   }
 };

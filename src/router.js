@@ -8,6 +8,16 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "Login",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Login.vue"),
+        meta:{index:0},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
+    },
+    {
+      path: "/index",
       name: "index",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -45,6 +55,17 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/Lading.vue"),
         meta:{index:3},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
+    }
+    ,
+    {
+      path: "/SelectPersonnel",
+      name: "SelectPersonnel",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/SelectPersonnel.vue"),
+        meta:{index:4},//meta对象的index用来定义当前路由的层级,由小到大,由低到高
     }
   ],
   

@@ -7,10 +7,7 @@
     <transition v-bind:name="transitionName">
       <router-view />
     </transition>
-    <van-tabbar route>
-      <van-tabbar-item replace to="/" icon="home-o">主页</van-tabbar-item>
-      <van-tabbar-item replace to="/search" icon="user-o">我的信息</van-tabbar-item>
-    </van-tabbar>
+   
   </div>
 </template>
 

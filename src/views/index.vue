@@ -20,6 +20,10 @@
         v-bind:to="value.url"
       />
     </van-grid>
+     <van-tabbar route>
+      <van-tabbar-item replace to="/" icon="home-o">主页</van-tabbar-item>
+      <van-tabbar-item replace to="/search" icon="user-o">我的信息</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
@@ -65,13 +69,13 @@ export default {
         "https://myphotos1102.oss-cn-shenzhen.aliyuncs.com/banner4.png",
         "https://myphotos1102.oss-cn-shenzhen.aliyuncs.com/banner1.png",
         "https://myphotos1102.oss-cn-shenzhen.aliyuncs.com/banner2.png",
-        
-        
       ]
     };
   },
 
-  methods: {},
+  methods: {
+
+  },
   created: function() {
     Notify({
       type: "success",
